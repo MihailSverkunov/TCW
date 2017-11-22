@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TaskManagerSM.DataAccess.Projects;
-using TaskManagerSM.Db;
+
 using TaskManagerSM.Entities;
 using TaskManagerSM.ViewModel;
 using TaskManagerSM.ViewModel.Projects;

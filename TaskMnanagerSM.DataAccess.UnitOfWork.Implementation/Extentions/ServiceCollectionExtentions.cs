@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
+using TaskMnanagerSM.DataAccess.UnitOfWork.Implementation;
 
 namespace TaskManagerSM.DataAccess.UnitOfWork.Implementation.Extentions
 {
@@ -11,7 +11,8 @@ namespace TaskManagerSM.DataAccess.UnitOfWork.Implementation.Extentions
             services
 
                 .AddDbContext<Db.TasksContext>(options => options.UseSqlServer(connectionString))
-                .AddScoped<IUnitOfWork, UnitOfWork>();
+                .AddScoped<IUnitOfWork, UnitOfWork>()
+                .AddTransient<IAsyncQueryableFactory, AsyncQueryableFactory>();
             return services;
         }
     }
